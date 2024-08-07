@@ -56,9 +56,6 @@ public class DistribuirCard : MonoBehaviour
                 //Escala de ellas 
                 nuevaInstancia.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
 
-                //Asignacion a esta variable y agregarle el script de drag and drop a la nueva instancia 
-                DragandDrop dragAndDropScript = nuevaInstancia.AddComponent<DragandDrop>(); 
-
                 // nuevaInstancia.AddComponent<DragandDop>();
                 nuevaInstancia.AddComponent<CanvasGroup>();
             }

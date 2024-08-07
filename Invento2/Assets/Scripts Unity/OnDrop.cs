@@ -5,26 +5,19 @@ using Carta;
 
 public class OnDrop : MonoBehaviour, IDropHandler
 {
+    public Clasificacion nombreclas;
+    public uint clasificacion;
+    public int posicion;
     GameObject item;
     private float lastClickTime;
     private const float doubleClickThreshold = float.MaxValue;
     public static Posiciones instancia;
- 
-    public enum Faccion
-    {
-        Primerafaccion,
-        SegundaFaccion,
-
-    }
     public enum Clasificacion
     {
-        CuerpoaCuerpo,
-        LargaDistancia,
-        Asedio,
-        Clima,
-        Ninguna,
+        CuerpoaCuerpo = 0b_001,
+        LargaDistancia = 0b_010,
+        Asedio = 0b_100,
     }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +34,10 @@ public class OnDrop : MonoBehaviour, IDropHandler
         {
             item = DragandDrop.itemDragging;
             item.transform.SetParent(transform);
-            item.transform.position = transform.position; 
+            item.transform.position = transform.position;
+            instancia.CosasTablero(nombreclas, posicion);
         }
-        instancia.CosasTablero();
+
     }
     // Update is called once per frame
     void Update()

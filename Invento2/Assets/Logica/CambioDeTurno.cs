@@ -15,6 +15,7 @@ namespace Carta
        
         public Jugador GetCurrent()
         {  
+            Debug.Log(current);
             return jugadores[current];
         }
         public void EndTurn()  

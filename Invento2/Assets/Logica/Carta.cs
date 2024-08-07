@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Carta
 {
-    public enum FaccionCard
+    public enum Faccion
     {
         PrimeraFaccion,
         SegudaFaccion,
@@ -13,9 +13,9 @@ namespace Carta
     {
         public string namecard;
         public string ability;
-        public FaccionCard card;
+        public Faccion card;
 
-        public CartaCread(string nombre, string habilidad, FaccionCard carta)
+        public CartaCread(string nombre, string habilidad, Faccion carta)
         {
             namecard = nombre;
             ability = habilidad;
@@ -37,7 +37,7 @@ namespace Carta
         }
         public uint clasificacion;
 
-        protected Carta2(string nombre, string habilidad, FaccionCard carta, int ataque ,uint numero) : base(nombre, habilidad, carta)
+        protected Carta2(string nombre, string habilidad, Faccion carta, int ataque ,uint numero) : base(nombre, habilidad, carta)
         {
             this.ataque = ataque;
             clasificacion = numero;
@@ -45,31 +45,31 @@ namespace Carta
     }
     public class Aumento : CartaCread
     {
-        public Aumento(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
+        public Aumento(string nombre, string habilidad, Faccion carta) : base(nombre, habilidad, carta)
         {
         }
     }
     public class Senuelo : CartaCread
     {
-        public Senuelo(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
+        public Senuelo(string nombre, string habilidad, Faccion carta) : base(nombre, habilidad, carta)
         {
         }
     }
     public class Clima : CartaCread
     {
-        public Clima(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
+        public Clima(string nombre, string habilidad, Faccion carta) : base(nombre, habilidad, carta)
         {
         }
     }
     public class Normales : Carta2
     {
-        public Normales(string nombre, string habilidad, FaccionCard carta, int ataque, uint numero) : base(nombre, habilidad, carta, ataque, numero)
+        public Normales(string nombre, string habilidad, Faccion carta, int ataque, uint numero) : base(nombre, habilidad, carta, ataque, numero)
         {
         }
     }
     public class Heroe : Normales
     {
-        public Heroe(string nombre, string habilidad, FaccionCard carta, int ataque, uint numero) : base(nombre, habilidad, carta, ataque, numero)
+        public Heroe(string nombre, string habilidad, Faccion carta, int ataque, uint numero) : base(nombre, habilidad, carta, ataque, numero)
         {
         }
     }

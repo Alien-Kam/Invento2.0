@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2630097598773704551}
   - component: {fileID: 8065623602116654852}
   - component: {fileID: 6658874847857675507}
+  - component: {fileID: -7948048104257360335}
   m_Layer: 5
   m_Name: Heore 2
   m_TagString: Primera Faccion
@@ -122,3 +123,19 @@ MonoBehaviour:
   clasificacion: 1
   tipoCarta: 0
   faccion: 0
+--- !u!114 &-7948048104257360335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179116970608550175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687609401766d664fa22ed7ee764adb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerIndex: 0
+  panelcard: {fileID: 0}
+  imagepanel: {fileID: 0}
+  newImage: {fileID: 0}

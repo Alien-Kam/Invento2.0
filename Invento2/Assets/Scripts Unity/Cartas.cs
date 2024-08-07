@@ -19,20 +19,20 @@ public class Cartas : MonoBehaviour
     public int ataque;
     public uint clasificacion;
     public Tipo tipoCarta;
-    public Carta.FaccionCard faccion;
+    public Carta.Faccion faccion;
     private Carta2 instanciaCarta;
     // hacer un switch
-    public void CrearCarta()
+    public Carta2 CrearCarta()
     {
         switch (tipoCarta)
         {
             case Tipo.Heore:
                 Heroe card = new Heroe(nombre, habilidad, faccion, ataque, clasificacion);
-                break;
-
+                return card;
+              
             case Tipo.Normales:
                 Normales cardh = new Normales(nombre, habilidad, faccion, ataque, clasificacion);
-                break;
+                return cardh;
 
             case Tipo.Clima:
                 Clima cardc = new Clima(nombre, habilidad, faccion);
@@ -46,10 +46,11 @@ public class Cartas : MonoBehaviour
                 Senuelo cards = new Senuelo(nombre, habilidad, faccion);
                 break;
         }
+        return null;
     }
     public Carta2 ObtenerInstanciaCarta()
     {
-        return instanciaCarta;
+        return CrearCarta();
     }
     private void Awake()
     {

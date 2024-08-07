@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Carta;
 
-public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     Vector3 starPosition; // Posicion inicial 
     Transform starParent; //posicion inicial del padre 
@@ -81,22 +81,7 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         }
 
     }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (imagepanel != null && cardImage != null && ownerIndex == playerIndex)
-        {
-            imagepanel.sprite = cardImage.sprite; // Mostrar la imagen de la carta en el panel
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (imagepanel != null)
-        {
-            imagepanel.sprite = panelcard.GetComponent<Image>().sprite; // Limpiar la imagen del panel cuando el mouse salga de la carta
-        }
-    }
-
+  
     // Update is called once per frame
     void Update()
     {

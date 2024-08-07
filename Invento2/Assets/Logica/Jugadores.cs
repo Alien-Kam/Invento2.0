@@ -4,11 +4,6 @@ using UnityEngine;
 
 namespace Carta
 {
-    public enum Faccion
-    {
-        PrimeraFaccion,
-        SegudaFaccion,
-    }
     public class Jugador
     {
         public string nombreplayer;
