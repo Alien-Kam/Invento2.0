@@ -11,11 +11,11 @@ namespace Carta
         public bool liderefect = false;
         public bool pasar = false;
         public List<Jugador> jugadores = new List<Jugador>(2);
-
+        public static CambiosDeTurno inns = new CambiosDeTurno();
        
         public Jugador GetCurrent()
-        { 
-           return jugadores[current];
+        {  
+            return jugadores[current];
         }
         public void EndTurn()  
         {

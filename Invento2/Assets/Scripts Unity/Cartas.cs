@@ -13,14 +13,14 @@ public class Cartas : MonoBehaviour
         Clima,
         Senuelo,
     }
-    
+
     public string nombre;
     public string habilidad;
     public int ataque;
     public uint clasificacion;
     public Tipo tipoCarta;
-    public Carta.FaccionCard faccion;  
-
+    public Carta.FaccionCard faccion;
+    private Carta2 instanciaCarta;
     // hacer un switch
     public void CrearCarta()
     {
@@ -46,6 +46,10 @@ public class Cartas : MonoBehaviour
                 Senuelo cards = new Senuelo(nombre, habilidad, faccion);
                 break;
         }
+    }
+    public Carta2 ObtenerInstanciaCarta()
+    {
+        return instanciaCarta;
     }
     private void Awake()
     {

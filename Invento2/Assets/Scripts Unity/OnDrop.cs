@@ -1,22 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Carta;
 
 public class OnDrop : MonoBehaviour, IDropHandler
 {
-    public string faccion;
     GameObject item;
-    Clasificacion clasificacionitem;
-    Clasificacion clasificacionitem2;
-    Clasificacion clasificacionitem3;
-    Faccion faccionitem;
     private float lastClickTime;
     private const float doubleClickThreshold = float.MaxValue;
-    List<GameObject> cuerpoacuerpo;
-    List<GameObject> largadistancia;
-    List<GameObject> asedio;
-    List<GameObject> Cementerio;
-
+    public static Posiciones instancia;
+ 
     public enum Faccion
     {
         Primerafaccion,
@@ -35,7 +28,10 @@ public class OnDrop : MonoBehaviour, IDropHandler
     // Start is called before the first frame update
     void Start()
     {
-
+        if (instancia == null)
+        {
+            instancia = FindObjectOfType<Posiciones>();
+        }
     }
 
     //Si entra al metodo y este metodo hace la funcion de Drop
@@ -44,11 +40,10 @@ public class OnDrop : MonoBehaviour, IDropHandler
         if (!item)
         {
             item = DragandDrop.itemDragging;
-            Debug.Log(item.name);
             item.transform.SetParent(transform);
-            item.transform.position = transform.position;
-            
+            item.transform.position = transform.position; 
         }
+        instancia.CosasTablero();
     }
     // Update is called once per frame
     void Update()

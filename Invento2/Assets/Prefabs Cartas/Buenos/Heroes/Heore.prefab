@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6665053426082130254}
   - component: {fileID: 2630097598773704551}
   - component: {fileID: 8065623602116654852}
-  - component: {fileID: -9020270033131017901}
+  - component: {fileID: 1666648521909580424}
   m_Layer: 5
   m_Name: Heore
   m_TagString: Primera Faccion
@@ -104,7 +104,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.151474, y: 38.947475}
   m_EdgeRadius: 0
---- !u!114 &-9020270033131017901
+--- !u!114 &1666648521909580424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,10 +113,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2179116970608550175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687609401766d664fa22ed7ee764adb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 72636736d0b12054ea1766abe0cd2d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerIndex: 0
-  panelcard: {fileID: 0}
-  imagepanel: {fileID: 0}
-  newImage: {fileID: 0}
+  nombre: 
+  habilidad: 
+  ataque: 0
+  clasificacion: 0
+  tipoCarta: 0
+  faccion: 0

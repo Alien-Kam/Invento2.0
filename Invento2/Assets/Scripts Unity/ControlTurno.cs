@@ -5,12 +5,29 @@ using Carta;
 
 public class ControlTurno : MonoBehaviour
 {
-
+    public List<Players> jugadores;
     CambiosDeTurno cambiosDeTurno = new CambiosDeTurno();
-    public static ControlTurno instancia = new ControlTurno();
+    public static ControlTurno instancia;
+
+    void Awake()
+    {
+        if (instancia == null)
+        {
+            instancia = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < jugadores.Count; i++)
+        {
+            Jugador player = new Jugador(jugadores[i].playerName, jugadores[i].playerIndex, jugadores[i].faccion);
+            cambiosDeTurno.jugadores.Add(player); 
+        }
         StartTurn();
     }
 
@@ -21,7 +38,7 @@ public class ControlTurno : MonoBehaviour
     }
     public void StartTurn()
     {
-        Debug.Log(cambiosDeTurno.GetCurrent().nombreplayer);
+        Debug.Log($" Es el turno del jugador {cambiosDeTurno.GetCurrent().nombreplayer}");
     }
     public void EndTurn()
     {

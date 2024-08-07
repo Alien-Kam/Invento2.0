@@ -9,20 +9,20 @@ namespace Carta
         PrimeraFaccion,
         SegudaFaccion,
     }
-    public abstract class Carta
+    public abstract class CartaCread
     {
         public string namecard;
         public string ability;
         public FaccionCard card;
 
-        public Carta(string nombre, string habilidad, FaccionCard carta)
+        public CartaCread(string nombre, string habilidad, FaccionCard carta)
         {
             namecard = nombre;
             ability = habilidad;
             card = carta;
         }
     }
-    public abstract class Carta2 : Carta
+    public abstract class Carta2 : CartaCread
     {
         public int ataque;
         public enum Clasificacion
@@ -43,19 +43,19 @@ namespace Carta
             clasificacion = numero;
         }
     }
-    public class Aumento : Carta
+    public class Aumento : CartaCread
     {
         public Aumento(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
         {
         }
     }
-    public class Senuelo : Carta
+    public class Senuelo : CartaCread
     {
         public Senuelo(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
         {
         }
     }
-    public class Clima : Carta
+    public class Clima : CartaCread
     {
         public Clima(string nombre, string habilidad, FaccionCard carta) : base(nombre, habilidad, carta)
         {

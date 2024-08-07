@@ -16,10 +16,9 @@ public class Players : MonoBehaviour
     
     public void CreadordeJugadores()
     {
-        CambiosDeTurno variacion = new CambiosDeTurno();  
-        //Debug.Log("Se crearon los jugadores");
         Jugador player = new Jugador(playerName, playerIndex, faccion);
-        variacion.jugadores.Add(player);
+         CambiosDeTurno.inns.jugadores.Add(player);
+
     }
 
     void Start()
