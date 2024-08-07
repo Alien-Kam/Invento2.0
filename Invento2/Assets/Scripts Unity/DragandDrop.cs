@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Carta;
 
 public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -21,9 +22,9 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hola");
+        
         dragParent = GameObject.FindGameObjectWithTag("DragParent").transform; // Este es el padre
-        Debug.Log(dragParent.name);
+       
         panelcard = GameObject.FindWithTag("Panelcard");
 
         if (panelcard != null)
@@ -38,7 +39,7 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         {
             return;
         }
-        //itemDragging = gameObject; // El objeto que se mueve 
+        itemDragging = gameObject; // El objeto que se mueve 
         starPosition = transform.position; // posicion inicial
         starParent = transform.parent; // posicion del padre 
         transform.SetParent(dragParent, false);
@@ -71,17 +72,13 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
             transform.SetParent(starParent);
         }
-        /*else
+        else
         {
             haSidoMovida = true; // Esto es para que ya no se pueda mover mas porque ya ha sido colocada
-
-            Players player = Cambiodeturno.instance.players[playerIndex];
-            Carta card = GetComponent<Carta>();
-            player.puntos += card.ataque;
-            player.UpdatepuntosText();
-            imagepanel = null;
-            Cambiodeturno.instance.EndTurn();
-        }*/
+            CambiosDeTurno.hasmovid = true;
+            ControlTurno.instancia.EndTurn();
+            
+        }
 
     }
     public void OnPointerEnter(PointerEventData eventData)

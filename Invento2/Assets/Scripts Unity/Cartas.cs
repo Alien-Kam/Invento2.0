@@ -24,16 +24,6 @@ public class Cartas : MonoBehaviour
     // hacer un switch
     public void CrearCarta()
     {
-        Debug.Log("Creando una carta");
-        if (clasificacion == 10)
-        {
-            clasificacion = 0b_010;
-        }
-        if (clasificacion == 1)
-        {
-            clasificacion = 0b_001;
-        }
-
         switch (tipoCarta)
         {
             case Tipo.Heore:

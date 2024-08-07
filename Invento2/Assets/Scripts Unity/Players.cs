@@ -13,19 +13,21 @@ public class Players : MonoBehaviour
     public int playerIndex;
     public Carta.Faccion  faccion;
     public TextMeshProUGUI puntosText;
-
+    
     public void CreadordeJugadores()
     {
-        Debug.Log("Se crearon los jugadores");
+        CambiosDeTurno variacion = new CambiosDeTurno();  
+        //Debug.Log("Se crearon los jugadores");
         Jugador player = new Jugador(playerName, playerIndex, faccion);
-        
-        
+        variacion.jugadores.Add(player);
     }
 
     void Start()
     {
+        CreadordeJugadores();
         puntos = 0;
         UpdatepuntosText();
+       
     }
     public void UpdatepuntosText()
     {

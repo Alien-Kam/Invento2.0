@@ -4,7 +4,7 @@ using UnityEngine;
 using Carta;
 using UnityEngine.EventSystems;
 
-public class Posiciones : MonoBehaviour, IDropHandler
+public class Posiciones : MonoBehaviour
 {
     public GameObject[] CuerpoaCuerpo;
     public GameObject[] LargaDistancia;
@@ -13,10 +13,10 @@ public class Posiciones : MonoBehaviour, IDropHandler
     public GameObject[] Clima;
     private float lastClickTime;
     private const float doubleClickThreshold = float.MaxValue;
-    public void OnDrop(PointerEventData eventData)
+    
+    public void Tablero()
     {
-        Debug.Log("On Drop");
-        throw new System.NotImplementedException();
+       
     }
 
     // Preguntar si los gameobjects de las listas tienen hijos y pasarle el elemento al tablero.

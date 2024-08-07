@@ -1,32 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Carta;
 
-public class CambiosDeTurno
+namespace Carta
 {
-    public int current = 0;
-    public bool hasmovid = false;
-    public bool liderefect = false;
-    public bool pasar = false;
-    public List<Jugador> jugadores = new List<Jugador>(2);
-   
-    void AddList(Jugador player)
+    public class CambiosDeTurno
     {
-        jugadores.Add(player);
-    }
-    public void StarTurn()
-    {
-         
-        if (hasmovid || liderefect || pasar)
+        public int current = 0;
+        public static bool hasmovid = false;
+        public bool liderefect = false;
+        public bool pasar = false;
+        public List<Jugador> jugadores = new List<Jugador>(2);
+
+       
+        public Jugador GetCurrent()
+        { 
+           return jugadores[current];
+        }
+        public void EndTurn()  
         {
-            EndTurn();
+            hasmovid = false;
+            current = (current + 1) % jugadores.Count;
         }
     }
-    public void EndTurn()
-    {
-        current = (current + 1) % jugadores.Count;
-        StarTurn();
-    }
-
 }
+
