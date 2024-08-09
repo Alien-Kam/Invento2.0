@@ -7,7 +7,7 @@ public class ControlTurno : MonoBehaviour
 {
     public List<Players> jugadores;
     CambiosDeTurno cambiosDeTurno = new CambiosDeTurno();
-    public static ControlTurno instancia;
+    public ControlTurno instancia;
 
     void Awake()
     {

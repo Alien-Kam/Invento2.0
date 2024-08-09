@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Carta
+namespace Logica
 {
     public class Tablero
     {
         public static Tablero instancia = new Tablero();
         public Carta2[,] tablero = new Carta2[6, 5];
         public bool[,] mask = new bool[6, 5];
-        public bool[,] tableropy2 = new bool[3, 5];
         public Clima[] clima1 = new Clima[3];
         public bool[] climapl1 = new bool[3];
         public Clima[] clima2 = new Clima[3];
@@ -26,7 +25,7 @@ namespace Carta
 
         public void Mesa(Carta2 card, int filaplayer1, int filaplayer2 ,int columna, uint clasificacion)
         {
-            if(CambiosDeTurno.inns.current == 0)
+            if(instance.current == 0)
             {
 
                 tablero[filaplayer1, columna] = card;
@@ -36,6 +35,7 @@ namespace Carta
         }
         public bool Valido(Carta2 card,uint clasificacion)
         {
+            Debug.Log("Hola");
             if(card.card != instance.jugadores[instance.current].faccion)
             {
                 Debug.Log($"El current es :{instance.current}");
@@ -43,6 +43,7 @@ namespace Carta
                 Debug.Log(card.card);
                 return true;
             }
+            Debug.Log("Valido");
             return false;
         }
     }

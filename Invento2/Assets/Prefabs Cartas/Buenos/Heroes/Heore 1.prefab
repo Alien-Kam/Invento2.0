@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687609401766d664fa22ed7ee764adb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDragging: {fileID: 0}
   ownerIndex: 0
+  playerIndex: 0
   panelcard: {fileID: 0}
   imagepanel: {fileID: 0}
   newImage: {fileID: 0}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Carta
+namespace Logica
 {
     public class Jugador
     {

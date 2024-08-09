@@ -37,29 +37,27 @@ public class DistribuirCard : MonoBehaviour
             }
         }
     }*/
-
-        void InstanciarCarta(List<GameObject> cartas, Transform position)
+    }
+    void InstanciarCarta(List<GameObject> cartas, Transform position)
+    {
+        for (int i = 0; i < hand.Count; i++)
         {
-            for (int i = 0; i < hand.Count; i++)
-            {
-                GameObject carta = hand[i];
-                Cartas cartascript = hand[i].GetComponent<Cartas>();
+            GameObject carta = hand[i];
+            Cartas cartascript = hand[i].GetComponent<Cartas>();
 
 
-                // GetChild busca el hijo y en este caso la posicion 
-                Transform pos = position.GetChild(i);
+            // GetChild busca el hijo y en este caso la posicion 
+            Transform pos = position.GetChild(i);
 
-                // Instancia las cartas 
-                GameObject nuevaInstancia = Instantiate(carta, pos.position, Quaternion.identity, canvasTransform);
-                objectNames.Add(carta.name + "(Clone)");
+            // Instancia las cartas 
+            GameObject nuevaInstancia = Instantiate(carta, pos.position, Quaternion.identity, canvasTransform);
+            objectNames.Add(carta.name + "(Clone)");
 
-                //Escala de ellas 
-                nuevaInstancia.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+            //Escala de ellas 
+            nuevaInstancia.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
 
-                // nuevaInstancia.AddComponent<DragandDop>();
-                nuevaInstancia.AddComponent<CanvasGroup>();
-            }
+            // nuevaInstancia.AddComponent<DragandDop>();
+            nuevaInstancia.AddComponent<CanvasGroup>();
         }
     }
-
 }

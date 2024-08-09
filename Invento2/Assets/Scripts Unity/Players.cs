@@ -17,7 +17,7 @@ public class Players : MonoBehaviour
     public void CreadordeJugadores()
     {
         Jugador player = new Jugador(playerName, playerIndex, faccion);
-         CambiosDeTurno.inns.jugadores.Add(player);
+         //instance.jugadores.Add(player);
 
     }
 

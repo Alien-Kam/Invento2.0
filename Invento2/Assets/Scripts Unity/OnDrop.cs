@@ -37,7 +37,6 @@ public class OnDrop : MonoBehaviour, IDropHandler
             item.transform.position = transform.position;
             instancia.CosasTablero(nombreclas, posicion);
         }
-
     }
     // Update is called once per frame
     void Update()

@@ -8,15 +8,17 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 {
     Vector3 starPosition; // Posicion inicial 
     Transform starParent; //posicion inicial del padre 
-    Transform dragParent; //Es cuando se haa drag en el item se coloque dentro de ese parent
-    public static GameObject itemDragging; // gameobject en movimiento 
+    Transform dragParent; //Es cuando se haga drag en el item se coloque dentro de ese parent
+    public GameObject itemDragging; // gameobject en movimiento 
     private bool haSidoMovida = false; // Es para verificar si la carta ya se movio 
     public int ownerIndex; // Índice del propietario de la carta
-    public static int playerIndex;
+    public  int playerIndex;
     public GameObject panelcard;
     public Image imagepanel;
     public Sprite newImage;
     private Image cardImage; // Imagen de la carta
+    CambiosDeTurno instancie = new CambiosDeTurno();
+    ControlTurno Turno;
 
 
     // Start is called before the first frame update
@@ -75,8 +77,8 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         else
         {
             haSidoMovida = true; // Esto es para que ya no se pueda mover mas porque ya ha sido colocada
-            CambiosDeTurno.hasmovid = true;
-            ControlTurno.instancia.EndTurn();
+            instancie.hasmovid = true;
+            Turno.EndTurn();
             
         }
 
